@@ -54,7 +54,7 @@ def textPipeline(txt):
 
 
 def PredictParty(text, vectorizer, model):
-    pipText = [clean_tweets_with_lem(text)]
+    pipText = [textPipeline(text)]
     txt = vectorizer.transform(pipText)
     st.write(txt.shape)
     pred = model.predict(txt)
@@ -65,11 +65,6 @@ st.set_page_config(
     # page_icon=""
     layout="centered"
 )
-
-def clean_tweets_with_lem(tweet):
-    tweet = tweet.lower()
-    tweet = re.sub(r'[^\w\s]', '', tweet)
-    return tweet
 
 c1, c2 = st.columns([1,5])
 
