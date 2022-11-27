@@ -1,9 +1,21 @@
-import streamlit as st
 import pickle
-import re
+
+# Import pandas for data handling
+import pandas as pd
+
+# NLTK is our Natural-Language-Took-Kit
 import nltk
 from nltk.corpus import stopwords
 from nltk import word_tokenize
+from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
+
+# Libraries for helping us with strings
+import string
+# Regular Expression Library
+import re
+
 nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
