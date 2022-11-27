@@ -52,14 +52,12 @@ def textPipeline(txt):
     txt = removeStopWords(txt)
     return txt
 
-
 def PredictParty(text, vectorizer, model):
     pipText = [textPipeline(text)]
     txt = vectorizer.transform(pipText)
-    st.write(txt)
-    st.write(txt.shape)
     pred = model.predict(txt)
-    return pred 
+    return pred
+
 
 st.set_page_config(
     page_title = "Testing NLP",
@@ -71,8 +69,11 @@ c1, c2 = st.columns([1,5])
 
 with c2:
     st.title("NLP Model")
-    text = st.text_input('Sample Text', '')
-    if text is not '':
-        partyPrediction = PredictParty(text, vectorizer, model)
-        # st.header(f"This text was written by a {partyPrediction}")
-        st.write(text)
+    text = "I have a gun"
+    partyPrediction = PredictParty(text, vectorizer, model)
+    st.writer(f"This text was written by a {partyPrediction}")
+    # text = st.text_input('Sample Text', '')
+    # if text is not '':
+    #     partyPrediction = PredictParty(text, vectorizer, model)
+    #     # st.header(f"This text was written by a {partyPrediction}")
+    #     st.write(text)
