@@ -46,8 +46,8 @@ def PredictParty(text, vectorizer, model):
 # model = pickle.load(open('model/nlp_model.pkl', 'rb'))
 # vectorizer = pickle.load(open('model/TfidfVectorizer.pkl', 'rb'))
 
-model = pickle.load(open('nlp_model.pkl', 'rb')) 
-vectorizer = pickle.load(open('TfidfVectorizer.pkl', 'rb'))
+model = pickle.load(open('/app/2022-fall-data-science/Week-10-Streamlit-Web-Apps/env/nlp_model.pkl', 'rb')) 
+vectorizer = pickle.load(open('/app/2022-fall-data-science/Week-10-Streamlit-Web-Apps/env/TfidfVectorizer.pkl', 'rb'))
 
 
 st.set_page_config(
