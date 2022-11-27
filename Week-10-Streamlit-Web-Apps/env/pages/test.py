@@ -70,11 +70,11 @@ c1, c2 = st.columns([1,5])
 
 with c2:
     st.title("NLP Model")
-    text = "I have a gun"
-    partyPrediction = PredictParty(text, vectorizer, model)
-    st.write(f"This text was written by a {partyPrediction}")
-    # text = st.text_input('Sample Text', '')
-    # if text is not '':
-    #     partyPrediction = PredictParty(text, vectorizer, model)
-    #     # st.header(f"This text was written by a {partyPrediction}")
-    #     st.write(text)
+    # text = "I have a gun"
+    # partyPrediction = PredictParty(text, vectorizer, model)
+    # st.write(f"This text was written by a {partyPrediction}")
+    text = st.text_input('Sample Text', '')
+    if text is not '':
+        partyPrediction = PredictParty(text, vectorizer, model)
+        # st.header(f"This text was written by a {partyPrediction}")
+        st.write(text)
