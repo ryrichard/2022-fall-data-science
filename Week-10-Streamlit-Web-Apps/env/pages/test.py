@@ -10,7 +10,7 @@ from nltk import word_tokenize
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
-import streamlist as st
+import streamlit as st
 
 # Libraries for helping us with strings
 import string
