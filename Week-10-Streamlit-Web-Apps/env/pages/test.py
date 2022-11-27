@@ -1,18 +1,18 @@
 import pickle
 import streamlit as st
 # Import pandas for data handling
-import pandas as pd
+# import pandas as pd
 
 # NLTK is our Natural-Language-Took-Kit
 import nltk
 from nltk.corpus import stopwords
 from nltk import word_tokenize
-from nltk.stem import PorterStemmer
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import wordnet
+# from nltk.stem import PorterStemmer
+# from nltk.stem import WordNetLemmatizer
+# from nltk.corpus import wordnet
 
 # Libraries for helping us with strings
-import string
+# import string
 # Regular Expression Library
 import re
 
@@ -55,7 +55,6 @@ def textPipeline(txt):
 def PredictParty(text, vectorizer, model):
     pipText = [textPipeline(text)]
     txt = vectorizer.transform(pipText)
-    # st.write(txt.shape)
     pred = model.predict(txt)
     return pred
 
@@ -70,11 +69,7 @@ c1, c2 = st.columns([1,5])
 
 with c2:
     st.title("NLP Model")
-    # text = "I have a gun"
-    # partyPrediction = PredictParty(text, vectorizer, model)
-    # st.write(f"This text was written by a {partyPrediction}")
     text = st.text_input('Sample Text', '')
     if text is not '':
         partyPrediction = PredictParty(text, vectorizer, model)
         st.write(f"This text was written by a {partyPrediction}")
-        st.write(text)
