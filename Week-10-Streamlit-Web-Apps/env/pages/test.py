@@ -16,31 +16,6 @@ import string
 # Regular Expression Library
 import re
 
-# # Import our text vectorizers
-# from sklearn.feature_extraction.text import CountVectorizer
-# from sklearn.feature_extraction.text import TfidfVectorizer
-
-
-# # Import our classifiers
-# from sklearn.naive_bayes import MultinomialNB
-# from sklearn.ensemble import RandomForestClassifier
-
-
-# # Import some ML helper function
-# from sklearn.model_selection import train_test_split
-# from sklearn.metrics import plot_confusion_matrix
-# from sklearn.metrics import classification_report
-
-
-# # Import our metrics to evaluate our model
-# from sklearn import metrics
-# from sklearn.metrics import classification_report
-
-
-# # Library for plotting
-# import matplotlib.pyplot as plt
-# import seaborn as sns
-
 # You may need to download these from nltk
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -71,14 +46,14 @@ def removeStopWords(txt):
     
     return txt
 
-def textPipeline2(txt):
+def textPipeline(txt):
     txt = lowerWords(txt)
     txt = removePunctuation(txt)
     txt = removeStopWords(txt)
     return txt
 
 def PredictParty(text, vectorizer, model):
-    pipText = [textPipeline2(text)]
+    pipText = [textPipeline(text)]
     txt = vectorizer.transform(pipText)
     st.write(txt.shape)
     pred = model.predict(txt)
