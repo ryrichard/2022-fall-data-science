@@ -58,13 +58,13 @@ def PredictParty(text, vectorizer, model):
     txt = vectorizer.transform(pipText)
     st.write(txt.shape)
     pred = model.predict(txt)
-    # return pred
+    return pred 
 
-# st.set_page_config(
-#     page_title = "Testing NLP",
-#     # page_icon=""
-#     layout="centered"
-# )
+st.set_page_config(
+    page_title = "Testing NLP",
+    # page_icon=""
+    layout="centered"
+)
 
 def clean_tweets_with_lem(tweet):
     tweet = tweet.lower()
