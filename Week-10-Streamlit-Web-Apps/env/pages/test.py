@@ -55,7 +55,7 @@ def textPipeline(txt):
 def PredictParty(text, vectorizer, model):
     pipText = [textPipeline(text)]
     txt = vectorizer.transform(pipText)
-    st.write(txt.shape)
+    # st.write(txt.shape)
     pred = model.predict(txt)
     return pred
 
@@ -76,5 +76,5 @@ with c2:
     text = st.text_input('Sample Text', '')
     if text is not '':
         partyPrediction = PredictParty(text, vectorizer, model)
-        # st.header(f"This text was written by a {partyPrediction}")
+        st.write(f"This text was written by a {partyPrediction}")
         st.write(text)
