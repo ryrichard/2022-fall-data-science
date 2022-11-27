@@ -22,7 +22,8 @@ with col1:
         "#col1"
     )
     # display a picutre
-    st.image('images/test.png') #example
+    # st.image('images/test.png') #example
+    st.image('test.png')
 
     # display the link to that page
     st.write('<a href="/test"> Test Board</a>', unsafe_allow_html=True) #display another streamlit py page

@@ -43,8 +43,12 @@ def PredictParty(text, vectorizer, model):
     return pred
 
 
-model = pickle.load(open('model/nlp_model.pkl', 'rb'))
-vectorizer = pickle.load(open('model/TfidfVectorizer.pkl', 'rb'))
+# model = pickle.load(open('model/nlp_model.pkl', 'rb'))
+# vectorizer = pickle.load(open('model/TfidfVectorizer.pkl', 'rb'))
+
+model = pickle.load(open('nlp_model.pkl', 'rb')) 
+vectorizer = pickle.load(open('TfidfVectorizer.pkl', 'rb'))
+
 
 st.set_page_config(
     page_title = "Testing NLP",
