@@ -24,7 +24,7 @@ with col1:
     )
     # display a picutre
     # st.image('images/test.png') #example
-    st.image('1.png')
+    st.image('/app/2022-fall-data-science/Week-10-Streamlit-Web-Apps/env/1.png')
 
     # display the link to that page
     st.write('<a href="/test"> Test Board</a>', unsafe_allow_html=True) #display another streamlit py page
