@@ -1,4 +1,5 @@
 import pickle
+import streamlit as st
 
 # Import pandas for data handling
 import pandas as pd
@@ -10,7 +11,6 @@ from nltk import word_tokenize
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
-import streamlit as st
 
 # Libraries for helping us with strings
 import string
@@ -56,7 +56,7 @@ def textPipeline(txt):
 def PredictParty(text, vectorizer, model):
     pipText = [clean_tweets_with_lem(text)]
     txt = vectorizer.transform(pipText)
-    st.write(txt.shape)
+    # st.write(txt.shape)
     pred = model.predict(txt)
     # return pred
 
