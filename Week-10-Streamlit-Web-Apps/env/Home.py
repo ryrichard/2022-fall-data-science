@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import pickle 
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 st.set_page_config(
     page_title = "Hello",
     page_icon = "👋"
 )
-
 
 #Create a page header
 st.header("Welcome to my homepage! 👋")
@@ -20,11 +21,11 @@ with col1:
     st.write(
         "#col1"
     )
-    #display a picutre
-    # st.image('images/covid-icon.png') #example
+    # display a picutre
+    st.image('images/test.jpg') #example
 
-    #display the link to that page
-    # st.write('<a href="/covid"> Check out my Covid Dashboard</a>', unsafe_allow_html=True) #display another streamlit py page
+    # display the link to that page
+    st.write('<a href="/test"> Test Board</a>', unsafe_allow_html=True) #display another streamlit py page
 
 
 with col2:
