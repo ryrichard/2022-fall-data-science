@@ -44,8 +44,8 @@ def PredictParty(text, vectorizer, model):
     pipText = [textPipeline(text)]
     txt = vectorizer.transform(pipText)
     print(txt)
-    pred = model.predict(txt)
-    return pred
+    # pred = model.predict(txt)
+    # return pred
 
 st.set_page_config(
     page_title = "Testing NLP",
@@ -60,5 +60,5 @@ with c2:
     text = st.text_input('Sample Text', '')
     if text is not '':
         partyPrediction = PredictParty(text, vectorizer, model)
-        st.header(f"This text was written by a {partyPrediction}")
+        # st.header(f"This text was written by a {partyPrediction}")
         st.write(text)
