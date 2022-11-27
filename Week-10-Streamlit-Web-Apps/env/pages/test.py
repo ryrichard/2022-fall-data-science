@@ -10,6 +10,10 @@ nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 stopwords = stopwords.words('english')
 
+model = pickle.load(open('/app/2022-fall-data-science/Week-10-Streamlit-Web-Apps/env/model/nlp_model.pkl', 'rb')) 
+vectorizer = pickle.load(open('/app/2022-fall-data-science/Week-10-Streamlit-Web-Apps/env/model/TfidfVectorizer.pkl', 'rb'))
+
+
 def lowerWords(txt):
     return txt.lower()
 
@@ -41,14 +45,6 @@ def PredictParty(text, vectorizer, model):
     txt = vectorizer.transform(pipText)
     pred = model.predict(txt)
     return pred
-
-
-# model = pickle.load(open('model/nlp_model.pkl', 'rb'))
-# vectorizer = pickle.load(open('model/TfidfVectorizer.pkl', 'rb'))
-
-model = pickle.load(open('/app/2022-fall-data-science/Week-10-Streamlit-Web-Apps/env/nlp_model.pkl', 'rb')) 
-vectorizer = pickle.load(open('/app/2022-fall-data-science/Week-10-Streamlit-Web-Apps/env/TfidfVectorizer.pkl', 'rb'))
-
 
 st.set_page_config(
     page_title = "Testing NLP",
