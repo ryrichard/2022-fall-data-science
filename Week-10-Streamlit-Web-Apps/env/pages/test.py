@@ -43,6 +43,7 @@ def textPipeline(txt):
 def PredictParty(text, vectorizer, model):
     pipText = [textPipeline(text)]
     txt = vectorizer.transform(pipText)
+    print(txt)
     pred = model.predict(txt)
     return pred
 
