@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle 
 from sklearn.feature_extraction.text import TfidfVectorizer
+import os
 
 st.set_page_config(
     page_title = "Hello",
@@ -23,7 +24,7 @@ with col1:
     )
     # display a picutre
     # st.image('images/test.png') #example
-    st.image('test.png')
+    st.image('1.png')
 
     # display the link to that page
     st.write('<a href="/test"> Test Board</a>', unsafe_allow_html=True) #display another streamlit py page
