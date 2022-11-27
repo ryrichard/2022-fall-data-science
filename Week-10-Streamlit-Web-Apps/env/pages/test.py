@@ -16,30 +16,30 @@ import string
 # Regular Expression Library
 import re
 
-# Import our text vectorizers
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfVectorizer
+# # Import our text vectorizers
+# from sklearn.feature_extraction.text import CountVectorizer
+# from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-# Import our classifiers
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.ensemble import RandomForestClassifier
+# # Import our classifiers
+# from sklearn.naive_bayes import MultinomialNB
+# from sklearn.ensemble import RandomForestClassifier
 
 
-# Import some ML helper function
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import plot_confusion_matrix
-from sklearn.metrics import classification_report
+# # Import some ML helper function
+# from sklearn.model_selection import train_test_split
+# from sklearn.metrics import plot_confusion_matrix
+# from sklearn.metrics import classification_report
 
 
-# Import our metrics to evaluate our model
-from sklearn import metrics
-from sklearn.metrics import classification_report
+# # Import our metrics to evaluate our model
+# from sklearn import metrics
+# from sklearn.metrics import classification_report
 
 
-# Library for plotting
-import matplotlib.pyplot as plt
-import seaborn as sns
+# # Library for plotting
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 
 # You may need to download these from nltk
 nltk.download('stopwords')
