@@ -1,6 +1,5 @@
 import pickle
 import streamlit as st
-
 # Import pandas for data handling
 import pandas as pd
 
@@ -17,6 +16,32 @@ import string
 # Regular Expression Library
 import re
 
+# Import our text vectorizers
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+
+# Import our classifiers
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.ensemble import RandomForestClassifier
+
+
+# Import some ML helper function
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import plot_confusion_matrix
+from sklearn.metrics import classification_report
+
+
+# Import our metrics to evaluate our model
+from sklearn import metrics
+from sklearn.metrics import classification_report
+
+
+# Library for plotting
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# You may need to download these from nltk
 nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
@@ -46,14 +71,14 @@ def removeStopWords(txt):
     
     return txt
 
-def textPipeline(txt):
+def textPipeline2(txt):
     txt = lowerWords(txt)
     txt = removePunctuation(txt)
     txt = removeStopWords(txt)
     return txt
 
 def PredictParty(text, vectorizer, model):
-    pipText = [textPipeline(text)]
+    pipText = [textPipeline2(text)]
     txt = vectorizer.transform(pipText)
     st.write(txt.shape)
     pred = model.predict(txt)
@@ -72,7 +97,7 @@ with c2:
     st.title("NLP Model")
     text = "I have a gun"
     partyPrediction = PredictParty(text, vectorizer, model)
-    st.writer(f"This text was written by a {partyPrediction}")
+    st.write(f"This text was written by a {partyPrediction}")
     # text = st.text_input('Sample Text', '')
     # if text is not '':
     #     partyPrediction = PredictParty(text, vectorizer, model)
